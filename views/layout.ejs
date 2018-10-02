@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CashApp</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
+  <script src="javascripts/bootstrap.js"></script>
+</head>
+
+<!-- ==== header==== -->
+
+<div class="container-fluid navbar-dark bg-dark">
+  <div class="row">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Bazar CashBack</a>
+        </div>
+        <ul class="nav navbar-nav">
+          
+            <li class="<%=headActive == 'index' ? 'active' : '' %>" ><a href="/">Home</a></li>
+
+          <!-- <li <% if (headActive === 'index'){ %> class="active"<% } %>><a href="/">Home</a></li> -->
+          <% if(user){ %>
+          <li <% if ('dashboard' === 'dashboard'){ %> class="active"<% } %>><a href="account/">My Account</a></li>
+
+          <% } %>
+
+          <% if (!user){ %>
+
+          <li <% if (headActive === 'registration'){ %> class="active"<% } %>><a href="users/register">Register</a></li>
+
+          <li <% if (headActive === 'login'){ %> class="active"<% } %>><a href="/users/login">Login</a></li>
+
+          <% } %>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <% if(user){ %>
+          <li><a href="/users/logout">Logout</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+<body>
+
+<!-- ===  body== -->
+
+<%- body %>
+
+<!-- ==== footer -->
+<div class="container-fluid" id="bg-dark">
+  <div class="row">
+    <div class="col-md-12" style="text-align:center">
+      <a href="#">Bazar CashBack</a> © 2017 | all rights reserved! | Privacy Policy
+    </div>
+  </div>
+</div>
+</body>
+</html>

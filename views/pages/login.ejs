@@ -1,0 +1,31 @@
+<div class="container" style="min-height:530px !important;">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 regheader">
+                    <%=title %>
+                </div>
+              </div>
+              <div class="row">
+                 
+                <div class="col-md-12">
+                    <form action="/users/login" method="post">
+
+                    <div class="form-group">
+                      <label for="inputEmail4">Username *</label>
+
+                      <input type='text' class="form-control" name="username" />
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword4">Password *</label>
+                      <input type='password' class="form-control" name='password' />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login Here</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
